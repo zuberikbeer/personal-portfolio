@@ -1,7 +1,6 @@
 import "./Skills.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { Container } from "react-bootstrap";
 
 const Skills = () => {
   const responsive = {
@@ -29,28 +28,36 @@ const Skills = () => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div className="skill-bx wow zoomIn">
-              <h2>Skills</h2>
+            <div className="skill-bx">
+              <h2>Technical Skills</h2>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry
+                Proficient in Full Stack Javascript Development which includes:
               </p>
               <Carousel
                 responsive={responsive}
                 infinite={true}
-                className="owl-carousel owl-theme skill-slider"
+                className="skill-slider"
               >
                 <div className="item">
-                  <h5>Web Devlopment</h5>
+                  <h5>React</h5>
                 </div>
                 <div className="item">
-                  <h5>Brand Identity</h5>
+                  <h5>MERN Stack</h5>
                 </div>
                 <div className="item">
-                  <h5>Logo Design</h5>
+                  <h5>REST(CRUD)</h5>
                 </div>
                 <div className="item">
-                  <h5>React Developer</h5>
+                  <h5>Axios</h5>
+                </div>
+                <div className="item">
+                  <h5>Express</h5>
+                </div>
+                <div className="item">
+                  <h5>API's</h5>
+                </div>
+                <div className="item">
+                  <h5>Object Oriented Programming</h5>
                 </div>
               </Carousel>
             </div>

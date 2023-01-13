@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons";
 // import headerImg from "../assets/img/header-img.svg";
 import "./Banner.css";
 import "animate.css";
@@ -11,8 +10,7 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const [index, setIndex] = useState(1);
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+  const toRotate = ["Web Developer", "Web Designer", "Full Stack Developer"];
   const period = 2000;
 
   useEffect(() => {
@@ -40,15 +38,11 @@ export const Banner = () => {
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      setIndex((prevIndex) => prevIndex - 1);
       setDelta(period);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setIndex(1);
       setDelta(500);
-    } else {
-      setIndex((prevIndex) => prevIndex + 1);
     }
   };
 
@@ -65,13 +59,12 @@ export const Banner = () => {
                   }
                 >
                   <span className="tagline">Welcome to my Portfolio</span>
-                  <h1>
-                    {`Hi I'm Jordan Khalil `}
-                    <span className="wrap">{text}</span>
-                  </h1>
+                  <h1>{`Greetings Traveler I'm Jordan Khalil `}</h1>
+                  <span className="wrap">{text}</span>
+
                   <p>
                     Grand Circus coding bootcamp graducate with a certificate in
-                    full stack JavaScript application.{" "}
+                    full stack JavaScript.{" "}
                   </p>
                 </div>
               )}

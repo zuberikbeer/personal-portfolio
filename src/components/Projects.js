@@ -1,5 +1,8 @@
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
 import ProjectCards from "./ProjectCards";
+import projImg1 from "../assets/images/project-img1.png";
+import projImg2 from "../assets/images/project-img2.png";
+import projImg3 from "../assets/images/project-img3.png";
 import "./Projects.css";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -9,15 +12,18 @@ const Projects = () => {
     {
       title: "Celestial-Typer",
       description: "Full Stack Application using MERN",
+      imgUrl: projImg1,
     },
     {
       title: "Recipe-Project",
       description: "Third party API displaying recipes to make.",
+      imgUrl: projImg2,
     },
     {
       title: "Card-Matching-Game",
       description:
         "Demonstrate how to build a card flippin game using basic JavaScrip DOM elements",
+      imgUrl: projImg3,
     },
   ];
   return (
@@ -33,10 +39,7 @@ const Projects = () => {
                   }
                 >
                   <h2>Projects</h2>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
-                  </p>
+                  <p>These projects were made with love and care.</p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
                       variant="pills"

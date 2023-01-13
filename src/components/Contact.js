@@ -1,8 +1,10 @@
 import { useState } from "react";
+import React, { useRef } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Contact.css";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const formInitalDetails = {
@@ -12,36 +14,31 @@ const Contact = () => {
     phone: "",
     message: "",
   };
-
+  const form = useRef(formInitalDetails);
   const [formDetails, setFormDetails] = useState(formInitalDetails);
-  const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState({});
 
   const onFormUpdate = (category, value) => {
     setFormDetails({ ...formDetails, [category]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    setButtonText("Sending...");
-    let response = await fetch("http://localhost:3000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitalDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: "Message sent successfully" });
-    } else {
-      setStatus({
-        succes: false,
-        message: "Something went wrong, please try again later.",
-      });
-    }
+
+    emailjs
+      .sendForm(
+        "service_6oly3cc",
+        "contact_form",
+        form.current,
+        "-0g46LWjBjQcktF2V"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -70,11 +67,12 @@ const Contact = () => {
                   }
                 >
                   <h2>Get in Touch</h2>
-                  <form onSubmit={handleSubmit}>
+                  <form ref={form} onSubmit={sendEmail}>
                     <Row>
                       <Col size={12} sm={6} className="px-1">
                         <input
                           type="text"
+                          name="user_name"
                           value={formDetails.firstName}
                           placeholder="First Name"
                           onChange={(e) =>
@@ -85,7 +83,8 @@ const Contact = () => {
                       <Col size={12} sm={6} className="px-1">
                         <input
                           type="text"
-                          value={formDetails.lasttName}
+                          name="user_lastname"
+                          value={formDetails.lastName}
                           placeholder="Last Name"
                           onChange={(e) =>
                             onFormUpdate("lastName", e.target.value)
@@ -95,6 +94,7 @@ const Contact = () => {
                       <Col size={12} sm={6} className="px-1">
                         <input
                           type="email"
+                          name="user_email"
                           value={formDetails.email}
                           placeholder="Email Address"
                           onChange={(e) =>
@@ -105,6 +105,7 @@ const Contact = () => {
                       <Col size={12} sm={6} className="px-1">
                         <input
                           type="tel"
+                          name="user_phonenumber"
                           value={formDetails.phone}
                           placeholder="Phone No."
                           onChange={(e) =>
@@ -115,15 +116,14 @@ const Contact = () => {
                       <Col size={12} className="px-1">
                         <textarea
                           rows="6"
+                          name="message"
                           value={formDetails.message}
                           placeholder="Message"
                           onChange={(e) =>
                             onFormUpdate("message", e.target.value)
                           }
                         ></textarea>
-                        <button type="submit">
-                          <span>{buttonText}</span>
-                        </button>
+                        <button type="submit"></button>
                       </Col>
                     </Row>
                   </form>

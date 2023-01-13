@@ -1,14 +1,14 @@
-.project {
+.projects {
   padding: 80px 0;
   position: relative;
-  background-color: black;
+  background: linear-gradient(180deg, #0455b0, #063bab);
 }
-.project h2 {
+.projects h2 {
   font-size: 45px;
   font-weight: 700;
   text-align: center;
 }
-.project p {
+.projects p {
   color: #b8b8b8;
   font-size: 18px;
   letter-spacing: 0.8px;
@@ -17,17 +17,17 @@
   text-align: center;
   width: 56%;
 }
-.project .nav.nav-pills {
+.projects .nav.nav-pills {
   width: 72%;
   margin: 0 auto;
   border-radius: 50px;
   background-color: rgb(255 255 255 / 10%);
   overflow: hidden;
 }
-.project .nav.nav-pills .nav-item {
+.projects .nav.nav-pills .nav-item {
   width: 33.33333%;
 }
-.project .nav.nav-pills .nav-link {
+.projects .nav.nav-pills .nav-link {
   background-color: transparent;
   border-radius: 0;
   padding: 17px 0;
@@ -41,21 +41,22 @@
   text-align: center;
   z-index: 0;
 }
-.project .nav.nav-pills .nav-link::before {
+.projects .nav.nav-pills .nav-link::before {
   content: "";
   position: absolute;
   width: 0;
   height: 100%;
-  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  background: linear-gradient(90.21deg, #0dcaf0 -5.91%, #0d6efd 111.58%);
+
   top: 0;
   left: 0;
   z-index: -1;
   transition: 0.3s ease-in-out;
 }
-.project .nav.nav-pills .nav-link.active::before {
+.projects .nav.nav-pills .nav-link.active::before {
   width: 100% !important;
 }
-.project .nav.nav-pills .nav-link.active {
+.projects .nav.nav-pills .nav-link.active {
   border: 1px solid rgba(255, 255, 255, 1);
 }
 .nav-link#projects-tabs-tab-first {
@@ -78,7 +79,7 @@
 }
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  background: linear-gradient(90.21deg, #0dcaf0 -5.91%, #0d6efd 111.58%);
   opacity: 0.85;
   position: absolute;
   width: 100%;

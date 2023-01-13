@@ -4,6 +4,7 @@ import logo from "../assets/images/logo.svg";
 import navIcon1 from "../assets/images/nav-icon1.svg";
 import navIcon2 from "../assets/images/nav-icon2.svg";
 import navIcon3 from "../assets/images/nav-icon3.svg";
+import navIcon4 from "../assets/images/github.svg";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./NavBar.css";
@@ -77,6 +78,10 @@ export const NavBar = () => {
                 <a href="https://www.linkedin.com/in/jordan-khalil/">
                   <img src={navIcon1} alt="" />
                 </a>
+                <a href="https://github.com/zuberikbeer">
+                  <img src={navIcon4} alt="" />
+                </a>
+
                 <a href="https://www.facebook.com/jordan.khalil.5/">
                   <img src={navIcon2} alt="" />
                 </a>
