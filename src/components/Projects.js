@@ -13,17 +13,20 @@ const Projects = () => {
       title: "Celestial-Typer",
       description: "Full Stack Application using MERN",
       imgUrl: projImg1,
+      projectlink: "https://celestial-typer.web.app/",
     },
     {
       title: "Recipe-Project",
       description: "Third party API displaying recipes to make.",
       imgUrl: projImg2,
+      projectlink: "https://retromatching.surge.sh/",
     },
     {
       title: "Card-Matching-Game",
       description:
         "Demonstrate how to build a card flippin game using basic JavaScrip DOM elements",
       imgUrl: projImg3,
+      projectlink: "https://retromatching.surge.sh/",
     },
   ];
   return (
@@ -38,7 +41,7 @@ const Projects = () => {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
-                  <h2>Projects</h2>
+                  <h2>Project</h2>
                   <p>These projects were made with love and care.</p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav

@@ -51,7 +51,7 @@
   position: relative;
   transition: 0.3s ease-in-out;
 }
-.contact form button span {
+.contact form button {
   z-index: 1;
   position: relative;
 }
@@ -60,7 +60,6 @@
 }
 .contact form button::before {
   content: "";
-
   background: white;
   border-radius: 20px;
   width: 0;
@@ -73,4 +72,9 @@
 }
 .contact form button:hover::before {
   width: 100%;
+}
+
+.contact form button span {
+  z-index: 1;
+  position: relative;
 }

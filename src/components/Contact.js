@@ -5,6 +5,7 @@ import "./Contact.css";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import emailjs from "@emailjs/browser";
+import emblemImg from "../assets/images/emblem.svg";
 
 const Contact = () => {
   const formInitalDetails = {
@@ -52,7 +53,7 @@ const Contact = () => {
                   className={
                     isVisible ? "animate__animated animate__zoomIn" : ""
                   }
-                  //   src={contactImg}
+                  src={emblemImg}
                   alt="Contact Us"
                 />
               )}
@@ -123,7 +124,9 @@ const Contact = () => {
                             onFormUpdate("message", e.target.value)
                           }
                         ></textarea>
-                        <button type="submit"></button>
+                        <button type="submit">
+                          <span>Send</span>
+                        </button>
                       </Col>
                     </Row>
                   </form>
