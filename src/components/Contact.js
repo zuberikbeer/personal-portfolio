@@ -7,6 +7,12 @@ import TrackVisibility from "react-on-screen";
 import emailjs from "@emailjs/browser";
 import emblemImg from "../assets/images/emblem.svg";
 
+const Result = () => {
+  return (
+    <p>Your message has been successfully sent. I will contact you soon!</p>
+  );
+};
+
 const Contact = () => {
   const formInitalDetails = {
     firstName: "",
@@ -17,6 +23,7 @@ const Contact = () => {
   };
   const form = useRef(formInitalDetails);
   const [formDetails, setFormDetails] = useState(formInitalDetails);
+  const [result, showResult] = useState(false);
 
   const onFormUpdate = (category, value) => {
     setFormDetails({ ...formDetails, [category]: value });
@@ -40,6 +47,8 @@ const Contact = () => {
           console.log(error.text);
         }
       );
+    e.target.reset();
+    showResult(true);
   };
 
   return (
@@ -127,6 +136,7 @@ const Contact = () => {
                         <button type="submit">
                           <span>Send</span>
                         </button>
+                        <div className="row">{result ? <Result /> : null}</div>
                       </Col>
                     </Row>
                   </form>

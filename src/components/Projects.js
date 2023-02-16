@@ -19,7 +19,7 @@ const Projects = () => {
       title: "Recipe-Project",
       description: "Third party API displaying recipes to make.",
       imgUrl: projImg2,
-      projectlink: "https://retromatching.surge.sh/",
+      projectlink: "https://recipe-project-10da8.web.app/home",
     },
     {
       title: "Card-Matching-Game",

@@ -3,7 +3,7 @@
   padding: 60px 0 200px 0;
 }
 .contact img {
-  width: 92%;
+  width: 70%;
 }
 .contact h2 {
   font-size: 45px;
@@ -77,4 +77,9 @@
 .contact form button span {
   z-index: 1;
   position: relative;
+}
+
+.contact form .row {
+  color: white;
+  margin-top: 10px;
 }
