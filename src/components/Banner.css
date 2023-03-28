@@ -1,37 +1,40 @@
-.banner {
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 0;
-  padding: 260px 0 100px 0;
+  padding: 260px 0px 100px 25px;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
   background: linear-gradient(180deg, #13bdb8, #178ab6);
 }
-.banner .tagline {
+.banner-container .tagline {
   font-weight: 700;
   padding: 8px 50px;
   background: linear-gradient(90.21deg, #0dcaf0 -5.91%, #0b74c4 111.58%);
-
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.banner h1 {
+.banner-container h1 {
   font-size: 65px;
   font-weight: 700;
   line-height: 1;
   margin-bottom: 20px;
   display: block;
 }
-.banner p {
+.banner-container p {
   color: #ffffff;
   font-size: 20px;
   line-height: 1.5em;
   width: 96%;
 }
 
-.banner .wrap {
+.banner.container .wrap {
   color: white;
   font-size: 40px;
 }
@@ -49,4 +52,37 @@
 }
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
+}
+
+@media (max-width: 575.98px) {
+  .banner-container {
+    padding: 100px 0 0 0;
+  }
+
+  .banner-container .tagline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 0 10px;
+    padding: 10px;
+  }
+
+  .banner-container h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px 20px 10px;
+    padding: 10px;
+    font-size: 40px;
+  }
+
+  .banner-container p {
+    display: none;
+  }
+
+  .banner-container span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

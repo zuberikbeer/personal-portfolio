@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "HTML",
+    "description": "placeholder",
+    "imgUrl": "/imgs/html.svg"
+  },
+  {
+    "id": 2,
+    "name": "CSS",
+    "description": "placeholder",
+    "imgUrl": "/imgs/css.svg"
+  },
+  {
+    "id": 3,
+    "name": "JavaScript",
+    "description": "placeholder",
+    "imgUrl": "/imgs/javascript.svg"
+  },
+  {
+    "id": 4,
+    "name": "TypeScript",
+    "description": "placeholder",
+    "imgUrl": "/imgs/typescript.svg"
+  },
+  {
+    "id": 5,
+    "name": "Object Oriented Programming",
+    "description": "placeholder",
+    "imgUrl": "/imgs/oop.svg"
+  },
+  {
+    "id": 6,
+    "name": "Node.JS",
+    "description": "placeholder",
+    "imgUrl": "/imgs/nodejs.svg"
+  },
+  {
+    "id": 7,
+    "name": "MongoDb",
+    "description": "placeholder",
+    "imgUrl": "/imgs/mongodb.svg"
+  },
+  {
+    "id": 8,
+    "name": "SQL",
+    "description": "placeholder",
+    "imgUrl": "/imgs/sql.svg"
+  },
+  {
+    "id": 9,
+    "name": "Postman",
+    "description": "placeholder",
+    "imgUrl": "/imgs/postman.svg"
+  }
+]

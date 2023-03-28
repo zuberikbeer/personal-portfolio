@@ -1,32 +1,39 @@
-.skill {
-  padding: 100px 0 50px 0;
-  position: relative;
+.skill-container {
   background: linear-gradient(180deg, #178ab6, #0455b0);
+  display: flex;
+  justify-content: center;
 }
-.skill-bx {
-  background: linear-gradient(90.21deg, #0dcaf0 -5.91%, #0d6efd 111.58%);
-  border-radius: 64px;
-  text-align: center;
-  padding: 60px 50px;
-  margin-top: -60px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.card-custom {
+  color: black;
+  width: 12rem;
 }
-.skill h2 {
-  font-size: 45px;
-  font-weight: 700;
+
+@media (max-width: 576px) {
+  .card-custom {
+    max-width: 6rem;
+  }
 }
-.skill p {
-  color: #b8b8b8;
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  line-height: 1.5em;
-  margin: 14px 0 75px 0;
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .card-custom {
+    max-width: 8rem;
+  }
 }
-.skill-slider {
-  width: 97%;
-  height: 50px;
-  align-items: center;
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .card-custom {
+    max-width: 10rem;
+  }
 }
-.skill .item {
-  color: white;
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card-custom {
+    max-width: 12rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-custom {
+    max-width: 15rem;
+  }
 }

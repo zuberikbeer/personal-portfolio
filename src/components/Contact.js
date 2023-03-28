@@ -13,16 +13,28 @@ const Result = () => {
   );
 };
 
+const InputField = ({ type, name, value, placeholder, onChange }) => {
+  return (
+    <input
+      type={type}
+      name={name}
+      value={value}
+      placeholder={placeholder}
+      onChange={onChange}
+    />
+  );
+};
+
 const Contact = () => {
-  const formInitalDetails = {
+  const formInitialDetails = {
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
     message: "",
   };
-  const form = useRef(formInitalDetails);
-  const [formDetails, setFormDetails] = useState(formInitalDetails);
+  const form = useRef(formInitialDetails);
+  const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [result, showResult] = useState(false);
 
   const onFormUpdate = (category, value) => {
@@ -50,10 +62,9 @@ const Contact = () => {
     e.target.reset();
     showResult(true);
   };
-
   return (
     <section className="contact" id="connect">
-      <Container>
+      <Container fluid>
         <Row className="align-items-center">
           <Col size={12} md={6}>
             <TrackVisibility>
@@ -79,50 +90,48 @@ const Contact = () => {
                   <h2>Get in Touch</h2>
                   <form ref={form} onSubmit={sendEmail}>
                     <Row>
-                      <Col size={12} sm={6} className="px-1">
-                        <input
-                          type="text"
-                          name="user_name"
-                          value={formDetails.firstName}
-                          placeholder="First Name"
-                          onChange={(e) =>
-                            onFormUpdate("firstName", e.target.value)
-                          }
-                        />
-                      </Col>
-                      <Col size={12} sm={6} className="px-1">
-                        <input
-                          type="text"
-                          name="user_lastname"
-                          value={formDetails.lastName}
-                          placeholder="Last Name"
-                          onChange={(e) =>
-                            onFormUpdate("lastName", e.target.value)
-                          }
-                        />
-                      </Col>
-                      <Col size={12} sm={6} className="px-1">
-                        <input
-                          type="email"
-                          name="user_email"
-                          value={formDetails.email}
-                          placeholder="Email Address"
-                          onChange={(e) =>
-                            onFormUpdate("email", e.target.value)
-                          }
-                        />
-                      </Col>
-                      <Col size={12} sm={6} className="px-1">
-                        <input
-                          type="tel"
-                          name="user_phonenumber"
-                          value={formDetails.phone}
-                          placeholder="Phone No."
-                          onChange={(e) =>
-                            onFormUpdate("phone", e.target.value)
-                          }
-                        />
-                      </Col>
+                      {[
+                        {
+                          type: "text",
+                          name: "user_name",
+                          value: formDetails.firstName,
+                          placeholder: "First Name",
+                          category: "firstName",
+                        },
+                        {
+                          type: "text",
+                          name: "user_lastname",
+                          value: formDetails.lastName,
+                          placeholder: "Last Name",
+                          category: "lastName",
+                        },
+                        {
+                          type: "email",
+                          name: "user_email",
+                          value: formDetails.email,
+                          placeholder: "Email Address",
+                          category: "email",
+                        },
+                        {
+                          type: "tel",
+                          name: "user_phonenumber",
+                          value: formDetails.phone,
+                          placeholder: "Phone No.",
+                          category: "phone",
+                        },
+                      ].map((field, index) => (
+                        <Col key={index} size={12} sm={6} className="px-1">
+                          <InputField
+                            type={field.type}
+                            name={field.name}
+                            value={field.value}
+                            placeholder={field.placeholder}
+                            onChange={(e) =>
+                              onFormUpdate(field.category, e.target.value)
+                            }
+                          />
+                        </Col>
+                      ))}
                       <Col size={12} className="px-1">
                         <textarea
                           rows="6"

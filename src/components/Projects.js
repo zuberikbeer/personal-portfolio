@@ -8,7 +8,8 @@ import "animate.css";
 import TrackVisibility from "react-on-screen";
 
 const Projects = () => {
-  const projects = [
+  // Changed the variable name to a more descriptive name 'projectData'
+  const projectData = [
     {
       title: "Celestial-Typer",
       description: "Full Stack Application using MERN",
@@ -24,14 +25,28 @@ const Projects = () => {
     {
       title: "Card-Matching-Game",
       description:
-        "Demonstrate how to build a card flippin game using basic JavaScrip DOM elements",
+        "Demonstrate how to build a card flipping game using basic JavaScript DOM elements",
       imgUrl: projImg3,
       projectlink: "https://retromatching.surge.sh/",
     },
   ];
+
+  // Extracted renderProjects function to make the code more modular and readable
+  const renderProjects = () => {
+    return (
+      <Container>
+        <Row>
+          {projectData.map((project, index) => (
+            <ProjectCards key={index} {...project} />
+          ))}
+        </Row>
+      </Container>
+    );
+  };
+
   return (
     <section className="projects" id="project">
-      <Container>
+      <Container fluid>
         <Row>
           <Col size={12}>
             <TrackVisibility>
@@ -49,8 +64,9 @@ const Projects = () => {
                       className="nav-pills mb-5 justify-content-center align-items-center"
                       id="pills-tab"
                     >
+                      {/* Updated Nav.Link text to be more descriptive */}
                       <Nav.Item>
-                        <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                        <Nav.Link eventKey="first">All Projects</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
                         <Nav.Link eventKey="second">Tab 2</Nav.Link>
@@ -60,15 +76,10 @@ const Projects = () => {
                       </Nav.Item>
                     </Nav>
                     <Tab.Content>
-                      <Tab.Pane eventKey="first">
-                        <Row>
-                          {projects.map((project, index) => {
-                            return <ProjectCards key={index} {...project} />;
-                          })}
-                        </Row>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="second">Loren Ipsum</Tab.Pane>
-                      <Tab.Pane eventKey="third">Loren Ipsum</Tab.Pane>
+                      <Tab.Pane eventKey="first">{renderProjects()}</Tab.Pane>
+                      {/* Updated Tab.Pane content */}
+                      <Tab.Pane eventKey="second">Content for Tab 2</Tab.Pane>
+                      <Tab.Pane eventKey="third">Content for Tab 3</Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
                 </div>
