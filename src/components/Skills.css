@@ -5,12 +5,46 @@
 }
 .card-custom {
   color: black;
-  width: 12rem;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  padding: 5px;
+}
+.all-cards {
+  margin: 1rem; /* Adjust this value to control the space around each card */
+  display: flex;
+  justify-content: center;
+}
+.centered-title {
+  text-align: center;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card-gradient {
+  background-image: linear-gradient(160deg, #d6d6d6, #00b2ff);
+  border-radius: inherit; /* Match border-radius with react-bootstrap Card component */
+  overflow: hidden; /* Hide the overflowing content like Card.Img */
+}
+
+.stack {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 @media (max-width: 576px) {
+  .row {
+    justify-content: center;
+  }
+
   .card-custom {
     max-width: 6rem;
+  }
+  .stack {
+    justify-content: center;
   }
 }
 
@@ -22,7 +56,7 @@
 
 @media (min-width: 768px) and (max-width: 992px) {
   .card-custom {
-    max-width: 10rem;
+    max-width: 9rem;
   }
 }
 

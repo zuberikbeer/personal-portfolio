@@ -32,8 +32,8 @@ span.navbar-text {
 }
 
 .social-icon a {
-  width: 42px;
-  height: 42px;
+  width: 100px;
+  height: 100px;
   background: rgba(217, 217, 217, 0.1);
   display: inline-flex;
   border-radius: 50%;
@@ -45,8 +45,8 @@ span.navbar-text {
 }
 .social-icon a::before {
   content: "";
-  width: 42px;
-  height: 42px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   background-color: #ffffff;
   border-radius: 50%;
@@ -137,14 +137,76 @@ span.navbar-text {
   display: flex;
   align-items: center;
   margin-left: auto;
+  flex-direction: row;
 }
 
 .navbar-brand .logo {
-  width: 60%;
+  width: 100px;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
+  .social-icon a {
+    width: 28px;
+    height: 28px;
+  }
+  .social-icon a::before {
+    width: 28px;
+    height: 28px;
+  }
+  .btn-resume {
+    width: 90px;
+    height: 40px;
+  }
+  .btn-lets-connect {
+    width: 90px;
+    height: 40px;
+  }
+  .navbar-text button {
+    font-size: 14px;
+  }
   .navbar-brand .logo {
-    width: 100%;
+    width: 48px;
+    display: none;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .social-icon a {
+    width: 48px;
+    height: 48px;
+  }
+  .social-icon a::before {
+    content: "";
+    width: 48px;
+    height: 48px;
+  }
+  .navbar-brand .logo {
+    width: 48px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .social-icon a {
+    width: 60px;
+    height: 60px;
+  }
+  .social-icon a::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+  }
+  .navbar-brand .logo {
+    width: 60px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .social-icon a {
+    width: 100px;
+    height: 100px;
+  }
+  .social-icon a::before {
+    content: "";
+    width: 100px;
+    height: 100px;
   }
 }

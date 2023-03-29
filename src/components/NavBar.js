@@ -48,48 +48,42 @@ export const NavBar = () => {
   return (
     <Navbar expand="sm" className={scrolled ? "scrolled" : ""}>
       <Container fluid>
-        <Navbar.Brand href="/">
-          <img className="logo" src={logo} alt="Logo" />
-        </Navbar.Brand>
-
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Row>
-            <Nav className="ms-auto left-nav"></Nav>
-          </Row>
-          <span className="navbar-text">
-            <div className="social-icon">
-              <SocialIcon
-                href="https://www.linkedin.com/in/jordan-khalil/"
-                src={navIcon1}
-              />
-              <SocialIcon
-                href="https://github.com/zuberikbeer"
-                src={navIcon4}
-              />
-              <SocialIcon
-                href="https://www.facebook.com/jordan.khalil.5/"
-                src={navIcon2}
-              />
-              <SocialIcon
-                href="https://www.instagram.com/jordan_khalil/"
-                src={navIcon3}
-              />
-            </div>
-            <Button
-              className="btn-resume"
-              variant="outline-light"
-              disabled={isLoading}
-              onClick={!isLoading ? handleClick : null}
-            >
-              {isLoading ? "Loading" : "Resume"}
+        <Row>
+          <Navbar.Brand href="/">
+            <img className="logo" src={logo} alt="Logo" />
+          </Navbar.Brand>
+          <Nav className="ms-auto left-nav"></Nav>
+        </Row>
+        <span className="navbar-text">
+          <div className="social-icon">
+            <SocialIcon
+              href="https://www.linkedin.com/in/jordan-khalil/"
+              src={navIcon1}
+            />
+            <SocialIcon href="https://github.com/zuberikbeer" src={navIcon4} />
+            <SocialIcon
+              href="https://www.facebook.com/jordan.khalil.5/"
+              src={navIcon2}
+            />
+            <SocialIcon
+              href="https://www.instagram.com/jordan_khalil/"
+              src={navIcon3}
+            />
+          </div>
+          <Button
+            className="btn-resume"
+            variant="outline-light"
+            disabled={isLoading}
+            onClick={!isLoading ? handleClick : null}
+          >
+            {isLoading ? "Loading" : "Resume"}
+          </Button>
+          <HashLink to="#connect">
+            <Button className="btn-lets-connect" variant="outline-light">
+              Let's Connect
             </Button>
-            <HashLink to="#connect">
-              <Button className="btn-lets-connect" variant="outline-light">
-                Let's Connect
-              </Button>
-            </HashLink>
-          </span>
-        </Navbar.Collapse>
+          </HashLink>
+        </span>
       </Container>
     </Navbar>
   );
