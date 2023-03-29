@@ -4,7 +4,8 @@
   justify-content: space-around;
 }
 .contact-container img {
-  width: 50%;
+  width: 75%;
+  border-radius: 20px;
 }
 .contact-container h2 {
   font-size: 45px;
@@ -85,9 +86,27 @@
   margin-top: 10px;
 }
 
+.tab-container {
+  font-size: 1.2rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 576px) {
   .contact-container img {
     display: none;
+  }
+  .contact-container h2 {
+    display: flex;
+    justify-content: center;
+  }
+  .contact-container form button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
 

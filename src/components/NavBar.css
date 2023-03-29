@@ -121,12 +121,17 @@ span.navbar-text {
 .btn-lets-connect {
   width: 200px;
   height: 60px;
-  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
-
+.btn-lets-connect a {
+  text-decoration: none;
+}
+.btn-lets-connect::before {
+  content: "\00a0";
+}
 .left-nav {
   display: flex;
   justify-content: flex-start;
@@ -145,6 +150,19 @@ span.navbar-text {
 }
 
 @media (max-width: 576px) {
+  .navbar-brand {
+    flex-basis: auto;
+    margin-right: -50px;
+  }
+  .navbar-brand .logo {
+    margin-right: 10px;
+    width: 48px;
+  }
+  .social-icon {
+    display: flex;
+    align-items: center;
+    margin-right: -10px;
+  }
   .social-icon a {
     width: 28px;
     height: 28px;
@@ -164,9 +182,14 @@ span.navbar-text {
   .navbar-text button {
     font-size: 14px;
   }
-  .navbar-brand .logo {
-    width: 48px;
-    display: none;
+  .social-icon a img {
+    width: 60%;
+    height: 60%;
+  }
+  .navbar-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 }
 
@@ -183,6 +206,10 @@ span.navbar-text {
   .navbar-brand .logo {
     width: 48px;
   }
+  .social-icon a img {
+    width: 60%;
+    height: 60%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -198,6 +225,10 @@ span.navbar-text {
   .navbar-brand .logo {
     width: 60px;
   }
+  .social-icon a img {
+    width: 60%;
+    height: 60%;
+  }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .social-icon a {
@@ -208,5 +239,23 @@ span.navbar-text {
     content: "";
     width: 100px;
     height: 100px;
+  }
+  .social-icon a img {
+    width: 60%;
+    height: 60%;
+  }
+}
+@media (min-width: 1200px) and (max-width: 2700px) {
+  .btn-resume {
+    width: 200px;
+    height: 80px;
+  }
+  .btn-lets-connect {
+    width: 250px;
+    height: 80px;
+  }
+  .social-icon a img {
+    width: 70%;
+    height: 70%;
   }
 }

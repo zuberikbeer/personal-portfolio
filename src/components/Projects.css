@@ -12,10 +12,10 @@
   color: #b8b8b8;
   font-size: 18px;
   letter-spacing: 0.8px;
-  line-height: 1.5em;
+  line-height: 3.5em;
   margin: 14px auto 30px auto;
   text-align: center;
-  width: 56%;
+  width: 100%;
 }
 .projects .nav.nav-pills {
   width: 72%;
@@ -73,9 +73,10 @@
 }
 .proj-imgbx {
   position: relative;
-  border-radius: 30px;
+  border-radius: 15px;
   overflow: hidden;
   margin-bottom: 24px;
+  width: 100%;
 }
 .proj-imgbx::before {
   content: "";
@@ -123,4 +124,21 @@
   width: 35%;
   right: 0;
   z-index: -4;
+}
+
+@media (max-width: 450px) {
+  .projects .nav.nav-pills {
+    width: 70%;
+  }
+
+  .projects p {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 2000px;
+  }
 }
