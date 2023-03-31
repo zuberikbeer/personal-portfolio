@@ -149,6 +149,21 @@ span.navbar-text {
   width: 100px;
 }
 
+@media (max-width: 360px) {
+  .modal-content {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 405px) {
+  .navbar-brand {
+    display: none;
+  }
+  .btn-lets-connect {
+    display: none;
+  }
+}
+
 @media (max-width: 576px) {
   .navbar-brand {
     flex-basis: auto;
@@ -257,5 +272,8 @@ span.navbar-text {
   .social-icon a img {
     width: 70%;
     height: 70%;
+  }
+  .modal-content {
+    margin-top: 100px;
   }
 }

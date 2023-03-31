@@ -51,7 +51,7 @@ export const NavBar = () => {
   return (
     <>
       <Navbar expand="sm" className={scrolled ? "scrolled" : ""}>
-        <Container fluid>
+        <Container>
           <Row>
             <Navbar.Brand href="/">
               <img className="logo" src={logo} alt="Logo" />
@@ -80,20 +80,30 @@ export const NavBar = () => {
             <Button
               className="btn-resume"
               variant="outline-light"
-              disabled={isLoading}
+              disabled={isLoading || showModal}
               onClick={!isLoading ? handleShowModal : null}
             >
               {isLoading ? "Loading" : "Resume"}
             </Button>
             <HashLink to="#connect" style={{ textDecoration: "none" }}>
-              <Button className="btn-lets-connect" variant="outline-light">
+              <Button
+                className="btn-lets-connect"
+                variant="outline-light"
+                disabled={showModal}
+              >
                 Let's Connect
               </Button>
             </HashLink>
           </span>
         </Container>
       </Navbar>
-      <Modal show={showModal} onHide={handleCloseModal} centered size="lg">
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        centered
+        size="lg"
+        className="custom-modal"
+      >
         <Modal.Header closeButton>
           <Modal.Title style={{ color: "black" }}>Resume</Modal.Title>
         </Modal.Header>

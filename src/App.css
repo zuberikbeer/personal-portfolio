@@ -63,3 +63,7 @@ textarea:focus,
 select:focus {
   outline: none;
 }
+
+.row {
+  --bs-gutter-x: 0;
+}
